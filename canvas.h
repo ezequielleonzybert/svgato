@@ -9,6 +9,7 @@ class Canvas : public QWidget
 {
 public:
     QList<QPainterPath> paths;
+    float zoom = 1;
 
     Canvas();
 
@@ -17,6 +18,7 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+    void wheelEvent(QWheelEvent *event) override;
 };
 
 #endif // CANVAS_H
